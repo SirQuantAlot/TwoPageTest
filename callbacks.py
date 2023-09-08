@@ -43,16 +43,13 @@ def display_output(data):
     print('Starting graph...')
     print('data: ', data)
     print('data datatype: ',type(data))
-    if data is None:
-        raise PreventUpdate
-    else:
-        print('Getting to print...')
-        y = pd.to_numeric([row["$ Amount"] for row in data])
-        x = [row["Ticker"] for row in data]
-        fig = go.Figure(go.Bar(y=y, x=x, marker_color="rgb(0, 0, 153)"))
-        fig.update_layout(
-            yaxis_range=[0, max(y)]
-        )
-        fig.layout.plot_bgcolor = "#fff"
-        fig.layout.paper_bgcolor = "#fff"
+    print('Getting to print...')
+    y = pd.to_numeric([row["$ Amount"] for row in data])
+    x = [row["Ticker"] for row in data]
+    fig = go.Figure(go.Bar(y=y, x=x, marker_color="rgb(0, 0, 153)"))
+    fig.update_layout(
+        yaxis_range=[0, max(y)]
+    )
+    fig.layout.plot_bgcolor = "#fff"
+    fig.layout.paper_bgcolor = "#fff"
     return fig
