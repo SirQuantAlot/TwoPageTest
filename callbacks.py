@@ -9,9 +9,6 @@ import pandas as pd
 import plotly.graph_objects as go
 from dash import callback, Input, Output, State
 from dash.exceptions import PreventUpdate
-import dash
-import json
-
 
 # Saving Data_Table
 @callback(

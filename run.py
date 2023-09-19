@@ -1,5 +1,9 @@
+from flask import Flask
 import dash
 from dash import Dash, html, dcc
+
+# Setting up the Flask server
+server = Flask(__name__)
 
 scripts = [
     'https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.8/dayjs.min.js',
@@ -14,6 +18,7 @@ app = Dash(
     use_pages=True,
     external_scripts=scripts,
     update_title=None,
+    server=server,
 )
 
 app.layout = html.Div(
